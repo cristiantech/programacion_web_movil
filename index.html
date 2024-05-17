@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta name="description" content="Mi pagina de gatitos"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Web Movil ITI</title>
+    <style>
+        img{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="" alt="logo de la empresa">
+            <ul>
+                <li>Dasyunar</li>
+                <li>Ginancio</li>
+            </ul>
+        </nav>
+    </header>
+    <main></main>
+    <aside></aside>
+    <footer></footer>
+</body>
+
+<script>
+
+    const img = document.querySelector('img');
+    console.log(img)
+    const API = `https://api.thecatapi.com/v1/images/search`;
+    const res = async () => {
+        const response = await fetch(API);
+        const data = await response.json();
+        img.src = data[0].url;
+        console.log(data);
+    }
+
+    res();
+
+</script>
+</html>
